@@ -192,7 +192,7 @@ MySQLDriver >> writeAuthForHandshake: handshake onConnection: connSpec [
 	
 	auth
 		serverCaps: handshake serverCaps ;
-		charset: handshake serverLang ;
+		charset: 33 ;
 		user: connSpec user ;
 		password: connSpec password ;
 		database: connSpec db ;

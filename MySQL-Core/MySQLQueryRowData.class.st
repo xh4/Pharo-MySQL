@@ -85,7 +85,7 @@ MySQLQueryRowData >> parse [
 { #category : #parsing }
 MySQLQueryRowData >> readColumnFrom: aStream perDescrption: columnDescr [
 	| string |
-	string := (self decodeLcsFrom: aStream) ifNotNil: [:s | s asString] ifNil: [^nil].
+	string := (self decodeLcsFrom: aStream) ifNotNil: [:s | s decodeWith: #utf8] ifNil: [^nil].
 	^columnDescr type 
 		caseOf: {
 		[MySQLTypes typeTINY]->[string asInteger].
